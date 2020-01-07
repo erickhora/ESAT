@@ -1,0 +1,608 @@
+.navbar {
+  flex-flow: row nowrap;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.nav-item {
+  padding-left: 2rem;
+}
+
+.tiny-rectangle {
+  position: relative;
+  background-color: black;
+  height: 25px;
+  width: 7px;
+  top: -1.8rem;
+  left: 1.2rem;
+}
+
+.presentation {
+  position: relative;
+  background-image: url("../../assets/images/samson-creative-ZGjbiukp_-A-unsplash@2x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 650px;
+}
+
+.presentation > img {
+  position: relative;
+  width: 90%;
+}
+
+.budget-box {
+  content: url("../../assets/images/grupo_160.png");
+}
+
+/* .presentation-text {
+  position: absolute;
+  top: 30%;
+  left: -30%;
+  margin-right: 10%;
+  color: black;
+  font-size: 2rem;
+  transform: rotate(-90deg);
+} */
+
+.try-btn {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.arrow {
+  background-color: white;
+  border-radius: 0;
+}
+
+.who-title {
+    position: absolute;
+    margin-top: -10%;
+    margin-left: 0;
+    color: white;
+    font-size: 3rem;
+    z-index: 2;
+    text-shadow: black 0 0.5px;
+}
+
+.who-box {
+    position: relative;
+    background-color: black;
+    margin: 0 auto;
+    text-align: start;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.number {
+  font-size: 4rem;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.number-text {
+  font-size: 1rem;
+  color: gray;
+}
+
+.circle-filled{
+  position: relative;
+  height: 70px;
+  width: 250px;
+  background: #27C5BD;
+  left: -30%;
+}
+
+.circle-outline{
+  position: relative;
+  height: 70px;
+  width: 250px;
+  border-color: #2FEBBB!important;
+  border-width: 5px!important;
+  right: -70%;
+}
+
+.feature-title{
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.feature-subtitle{
+  font-size: 1.3rem;
+}
+
+.feature-content{
+  font-size: 0.8rem;
+}
+
+.feature-btn{
+  position: relative;
+  background-color: #27C5BD;
+  color: white;
+  border-radius: 0;
+  font-size: 0.8rem!important;
+  margin-top: 14%;
+}
+
+.feature-btn::after{
+  margin-right: auto;
+  font-family: 'Material Icons';
+  content: "arrow_right_alt";
+}
+
+.feature-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.feature1-img{
+  background-image: url("../../assets/images/kelly-sikkema-1484283-unsplash.jpg");
+  height: 300px;
+  width: 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.feature2-img{
+  background-image: url("../../assets/images/kelly-sikkema-1484283-unsplash.jpg");
+  height: 300px;
+  width: 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.feature3-img{
+  background-image: url("../../assets/images/kelly-sikkema-1484283-unsplash.jpg");
+  height: 300px;
+  width: 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.feature4-img{
+  background-image: url("../../assets/images/kelly-sikkema-1484283-unsplash.jpg");
+  height: 300px;
+  width: 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.team{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.horizontal-line{
+  display: inline-block;
+  background: black;
+  height: 8px;
+  width: 25%;
+}
+
+.horizontal-line2{
+  display: inline-block;
+  background: black;
+  height: 8px;
+  width: 25%;
+}
+
+/* CAROUSEL */
+
+@media (min-width: 768px) {
+
+  /* show 3 items */
+  .carouselPrograms .carousel-inner .active,
+  .carouselPrograms .carousel-inner .active + .carousel-item,
+  .carouselPrograms .carousel-inner .active + .carousel-item + .carousel-item {
+      display: block;
+  }
+
+  .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+  .carouselPrograms .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+      transition: none;
+  }
+
+  .carouselPrograms .carousel-inner .carousel-item-next,
+  .carouselPrograms .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+  }
+
+  .carouselPrograms .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+      position: absolute;
+      top: 0;
+      right: -33.333%;
+      z-index: -1;
+      display: block;
+      visibility: visible;
+  }
+
+  /* left or forward direction */
+  .carouselPrograms .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item,
+  .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+  .carouselPrograms .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+      position: relative;
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+  }
+
+  /* farthest right hidden item must be abso position for animations */
+  .carouselPrograms .carousel-inner .carousel-item-prev.carousel-item-right {
+      position: absolute;
+      top: 0;
+      left: 0%;
+      z-index: -1;
+      display: block;
+      visibility: visible;
+  }
+
+  /* right or prev direction */
+  .carouselPrograms .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item,
+  .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+  .carouselPrograms .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+      position: relative;
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+      display: block;
+      visibility: visible;
+  }
+}
+
+/* FIM DO CAROUSEL */
+
+.form-box {
+  position: relative;
+  margin-top: 60px;
+  width: 100%;
+  background-color: #e1e1e1;
+}
+
+.form-title{
+  position: relative;
+  font-size: 1.7rem;
+  margin-top: -20%;
+}
+
+.form-subtitle{
+  font-size: 0.75rem;
+  margin-top: -10%;
+  margin-left: 15px;
+}
+
+.form-control{
+  background-color: #DADADA;
+}
+
+.form-control:focus{
+  background-color: #DADADA;
+}
+
+.input-group-prepend{
+  background-color: #DADADA;
+}
+
+.form-btn{
+  position: absolute;
+  right: 8%;
+  margin-top: -10%;
+  width: 40%;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: black;
+  border-radius: 0;
+}
+
+.contact-section{
+  background-color: black;
+}
+
+a{
+  color: white;
+}
+
+.footer-logo {
+  display: block;
+  content: url("../../assets/images/Logo_ESAT[FundoBranco_PNG]-15.png");
+  height: 40px;
+  width: 40px;
+  margin-left: 47%;
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 410px) {
+  .presentation {
+    height: 750px;
+  }
+}
+
+@media only screen and (min-width: 482px) {
+  .presentation {
+    height: 850px;
+  }
+
+  .form-title{
+    margin-top: -15%;
+  }
+
+  .form-subtitle{
+    margin-top: -8%;
+  }
+}
+
+/* Extra small devices (phones, 530px and down) */
+@media only screen and (min-width: 530px) {
+  .presentation {
+    height: 950px;
+  }
+
+  .who-title {
+    margin-top: -7%;
+  }
+
+  .form-title{
+    margin-top: -10%;
+  }
+
+  .form-subtitle{
+    margin-top: -6%;
+  }
+
+  .circle-filled{
+    left: -20%;
+  }
+
+  .form-btn{
+    right: 6%;
+    margin-top: -8%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 648px and up) */
+@media only screen and (min-width: 648px) {
+  .presentation {
+    height: 1050px;
+  }
+  .circle-filled{
+    left: -15%;
+  }
+
+  .circle-outline{
+    right: -80%;
+  }
+
+  .form-btn{
+    right: 6%;
+    margin-top: -6%;
+  }
+}
+
+/* Medium devices (landscape tablets, 755px and up) */
+@media only screen and (min-width: 755px) {
+  .presentation {
+    height: 750px;
+  }
+
+  .budget-box {
+    content: url("../../assets/images/Grupo_160@2x.png");
+  }
+
+  .who-title {
+    margin-top: -10%;
+    margin-left: 5%;
+    font-size: 5rem;
+  }
+
+  .who-box {
+    width: 80%;
+    padding: 80px!important;
+    text-align: center;
+  }
+
+  .circle-filled{
+    position: relative;
+    height: 150px;
+    width: 650px;
+    background: #27C5BD;
+    left: -50%;
+  }
+
+  .circle-outline{
+    right: -80%;
+  }
+
+  .number {
+    position: absolute;
+    font-size: 6.5rem;
+    margin-top: -12%;
+    margin-left: 10%;
+  }
+
+  .number-text{
+    position: relative;
+    font-size: 1.5rem;
+    color: gray;
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .form-box {
+    margin-top: 100px;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .form-title{
+    margin-top: -10%;
+    margin-left: -15%;
+    font-size: 2.5rem;
+  }
+
+  .form-subtitle{
+    margin-top: -8%;
+  }
+
+  .footer-order {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+
+  .footer-logo {
+    height: 250px;
+    width: 250px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+}
+
+/* Large devices (laptops/desktops, 825px and up) */
+@media only screen and (min-width: 825px) {
+  .presentation {
+    height: 750px;
+  }
+
+  .budget-box {
+    content: url("../../assets/images/Grupo_160@2x.png");
+  }
+
+  .who-title {
+    margin-top: -9%;
+  }
+
+  .number-text{
+    margin-top: 8%;
+  }
+
+  .circle-filled{
+    left: -40%;
+  }
+
+  .circle-outline{
+    right: -80%;
+  }
+
+  .form-title{
+    margin-top: -8%;
+  }
+
+  .form-subtitle{
+    margin-top: -6%;
+  }
+
+  .form-btn{
+    width: 30%;
+    right: 6%;
+    margin-top: -5%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops,905px and up) */
+@media only screen and (min-width: 905px) {
+  .presentation {
+    height: 850px;
+  }
+
+  .who-title {
+    margin-top: -8%;
+    margin-left: 7%;
+  }
+
+  .number {
+    font-size: 7rem;
+    margin-top: -10%;
+  }
+
+  .number-text{
+    margin-top: 5%;
+  }
+
+  .form-title{
+    margin-top: -7%;
+  }
+
+  .form-subtitle{
+    margin-top: -4%;
+  }
+
+  .form-btn{
+    width: 30%;
+    right: 5%;
+    margin-top: -4%;
+  }
+}
+
+@media only screen and (min-width: 1015px) {
+  .who-title {
+    margin-top: -7%;
+    margin-left: 9%;
+  }
+
+  .circle-filled{
+    left: -30%;
+  }
+
+  .form-title{
+    margin-top: -7%;
+  }
+
+  .form-subtitle{
+    margin-top: -4%;
+  }
+}
+
+
+@media only screen and (min-width: 1124px) {
+  .who-title {
+    margin-top: -6%;
+    margin-left: 9%;
+  }
+
+  .number {
+    font-size: 7.5rem;
+    margin-top: -8%;
+  }
+
+  .circle-filled{
+    left: -25%;
+  }
+}
+
+
+@media only screen and (min-width: 1280px) {
+  .presentation {
+    height: 1050px;
+  }
+
+  .who-title {
+    margin-top: -5%;
+  }
+
+  .number {
+    font-size: 8rem;
+    margin-top: -8%;
+  }
+
+  .circle-filled{
+    left: -20%;
+  }
+
+  .form-btn{
+    width: 20%;
+    right: 5%;
+    margin-top: -3%;
+  }
+}
