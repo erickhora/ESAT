@@ -1,0 +1,43 @@
+.navbar {
+  flex-flow: row nowrap;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.nav-item {
+  padding-left: 2rem;
+}
+
+.tiny-rectangle {
+  position: relative;
+  background-color: black;
+  height: 25px;
+  width: 7px;
+  top: -1.8rem;
+  left: 1.2rem;
+}
+
+.row {
+  height: 100vh;
+}
+
+.col {
+  padding: 0;
+}
+
+#col-form {
+  padding-left: 15px;
+}
+
+#login-banner {
+  background-color: #27C5BD;
+  height: 282px;
+}
+
+#login-form-title {
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+}
+
