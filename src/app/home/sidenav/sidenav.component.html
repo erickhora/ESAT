@@ -1,3 +1,9 @@
-<div style="height: 100vh; background-color: black; color: white;">
-  <p>SIDENAV</p>
-</div>
+<div id="sidenav d-flex justify-content-center">
+  <img class="base-item" src="../../../assets/images/Logo_ESAT[FundoBranco].png" alt="Logo ESAT" height="150" width="150">
+  <p class="text-center">GERAL</p>
+  <button class="base-item">Resumo</button>
+  <p class="text-center mt-3">Projetos</p>
+  <button class="base-item" (click)="criado = true">Criar Novo</button>
+  <div *ngIf="criado">
+    <p>PROJETO CASA</p>
+  </div>

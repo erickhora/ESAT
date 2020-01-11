@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
+  criado = false;
+
   constructor() { }
 
   ngOnInit() {
