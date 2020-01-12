@@ -3,7 +3,36 @@
   <p class="text-center">GERAL</p>
   <button class="base-item">Resumo</button>
   <p class="text-center mt-3">Projetos</p>
-  <button class="base-item" (click)="criado = true">Criar Novo</button>
+
+  <!-- CRIAR NOVO -->
+  <button class="btn btn-outline-success base-item" (click)="openCreateNewProject(content)">Criar Novo</button>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">NOVO PROJETO</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-create-project></app-create-project>
+    </div>
+  </ng-template>
+
+
+  <!-- PROJETOS CRIADOS -->
   <div *ngIf="criado">
-    <p>PROJETO CASA</p>
+    <p>
+      <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+              [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+        Toggle
+      </button>
+    </p>
+    <div id="collapseExample" [ngbCollapse]="isCollapsed">
+      <div class="card">
+        <div class="card-body">
+          You can collapse this card by clicking Toggle
+        </div>
+      </div>
+    </div>
   </div>

@@ -1,0 +1,39 @@
+<!-- FORM DE CADASTRO DE PROJETO -->
+<form [formGroup]="createProjectForm" (ngSubmit)="onSubmit()" *ngIf="!cadastroPreenchido && !downloadTabelaFeito">
+  <div class="form-group">
+    NOME DO PROJETO: <input type="text" class="form-control" id="project-name" formControlName="name" required>
+    DESCRIÇÃO: <textarea class="form-control" name="description" id="project-description" cols="30" rows="10" formControlName="description"></textarea>
+    <div class="input-group mt-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">R$</span>
+      </div>
+      <input type="number" class="form-control" placeholder="00,00" aria-label="Limite" id="project-limit" formControlName="limit" required>
+    </div>
+    <small>Valor total disponível</small>
+    <div class="d-flex justify-content-around mt-4">
+      <button class="btn btn-outline-secondary" type="button" (click)="onCancel()">CANCELAR</button>
+      <button class="btn btn-dark" type="submit" (click)="cadastroPreenchido = true">PRÓXIMO</button>
+    </div>
+  </div>
+</form>
+
+<!-- DOWNLOAD TABELA DE ITENS -->
+<div *ngIf="cadastroPreenchido && !downloadTabelaFeito">
+  <p style="text-align: center;">BAIXE NOSSA TABELA DE ITENS:</p>
+  <button class="btn btn-outline-secondary btn-block">BAIXAR TABELA</button>
+  <div class="d-flex justify-content-around mt-4">
+    <button class="btn btn-outline-secondary" (click)="onCancel()">CANCELAR</button>
+    <button class="btn btn-dark" (click)="downloadTabelaFeito = true">CONCLUÍDO</button>
+  </div>
+</div>
+
+
+<!-- UPLOAD TABELA DE ITENS -->
+<div *ngIf="cadastroPreenchido && downloadTabelaFeito">
+  <p style="text-align: center;">FAÇA UPLOAD DA TABELA DE ITENS:</p>
+  <input type="file" name="table" id="table">
+  <div class="d-flex justify-content-around mt-4">
+    <button class="btn btn-outline-secondary">CANCELAR</button>
+    <button class="btn btn-dark" (click)="cadastroPreenchido = false; downloadTabelaFeito = false">CONCLUÍDO</button>
+  </div>
+</div>

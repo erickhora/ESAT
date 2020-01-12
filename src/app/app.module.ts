@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { SidenavComponent } from './home/sidenav/sidenav.component';
 import { HeaderComponent } from './home/header/header.component';
 import { FeatureComponent } from './home/feature/feature.component';
+import { CreateProjectComponent } from './home/sidenav/create-project/create-project.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FeatureComponent } from './home/feature/feature.component';
     HomeComponent,
     SidenavComponent,
     HeaderComponent,
-    FeatureComponent
+    FeatureComponent,
+    CreateProjectComponent
   ],
   imports: [
     BrowserModule,
