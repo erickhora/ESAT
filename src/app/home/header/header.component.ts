@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  projetoNome = 'CASA';
+  valorDisponivel = 0;
+  valorGasto = 0;
+  orcamentoTotal = 0;
+
   constructor() { }
 
   ngOnInit() {

@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<h2 class="text-center">Faça seu cadastro</h2>
+<div class="container">
+  <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="emailInput">E-mail</label>
+      <input type="email" name="email" id="email" formControlName="email" class="form-control" placeholder="Digite seu email">
+    </div>
+    <div class="form-group">
+      <label for="passwordInput">Senha</label>
+      <input type="password" name="password" id="password" formControlName="password" class="form-control" placeholder="Digite uma senha">
+      <small class="form-text text-muted">Sua senha deve conter no mínimo 6 caracteres</small>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+  </form>
+</div>

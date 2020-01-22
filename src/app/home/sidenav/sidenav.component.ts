@@ -7,8 +7,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-  fechar = false;
   criado = false;
+  isCollapsed = false;
 
   constructor(private modalService: NgbModal) {}
 
@@ -16,14 +16,7 @@ export class SidenavComponent implements OnInit {
 
   openCreateNewProject(content) {
     this.modalService.open(content, {
-      centered: true,
-      beforeDismiss: () => {
-        return this.fechar;
-      }
+      centered: true
     });
-  }
-
-  onClose(fechar: boolean) {
-    this.fechar = fechar;
   }
 }

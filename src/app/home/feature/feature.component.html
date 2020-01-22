@@ -1,3 +1,25 @@
 <div style="background-color: azure;">
- <p>FEATURE</p>
+  <p class="text-center">Nenhum projeto criado</p>
+  <div *ngIf="tabela.length > 0">
+    <table *ngFor="let item of tabela">
+      <thead>
+        <tr>
+          <th scope="col">Produto</th>
+          <th scope="col">Serviço/Material</th>
+          <th scope="col">Unidade</th>
+          <th scope="col">Quantidade</th>
+          <th scope="col">Fornecedores</th>
+          <th scope="col">Total(R$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr scope="row">{{ item.produto }}</tr>
+        <tr>{{ item.servMat }}</tr>
+        <tr>{{ item.unidade }}</tr>
+        <tr>{{ item.quantidade }}</tr>
+        <tr>{{ item.fornecedores }}</tr>
+        <tr>{{ item.total }}</tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tabela } from 'src/app/models/tabela.model';
 
 @Component({
   selector: 'app-feature',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feature.component.css']
 })
 export class FeatureComponent implements OnInit {
+
+  tabela: Tabela[] = [];
 
   constructor() { }
 

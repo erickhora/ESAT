@@ -1,7 +1,7 @@
 <div id="sidenav d-flex justify-content-center">
   <img class="base-item" src="../../../assets/images/Logo_ESAT[FundoBranco].png" alt="Logo ESAT" height="150" width="150">
   <p class="text-center">GERAL</p>
-  <button class="base-item">Resumo</button>
+  <button class="btn btn-outline-success base-item">Resumo</button>
   <p class="text-center mt-3">Projetos</p>
 
   <!-- CRIAR NOVO -->
@@ -10,12 +10,10 @@
   <ng-template #content let-modal>
     <div class="modal-header">
       <h4 class="modal-title">NOVO PROJETO</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
     </div>
     <div class="modal-body">
       <app-create-project></app-create-project>
+      <button class="btn btn-outline-secondary" type="button" (click)="modal.dismiss()">CANCELAR</button>
     </div>
   </ng-template>
 

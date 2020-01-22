@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Projeto } from 'src/app/models/projeto.model';
 
 @Component({
   selector: 'app-create-project',
@@ -12,7 +13,10 @@ export class CreateProjectComponent implements OnInit {
   cadastroPreenchido = false;
   downloadTabelaFeito = false;
 
-  @Output() cancelar = new EventEmitter<boolean>();
+  projeto: Projeto;
+  nomeInput = '';
+  descricaoInput = '';
+  valorTotalInput = 0;
 
   constructor() { }
 
@@ -27,9 +31,4 @@ export class CreateProjectComponent implements OnInit {
   onSubmit() {
     console.log(this.createProjectForm);
   }
-
-  onCancel() {
-    this.cancelar.emit(true);
-  }
-
 }

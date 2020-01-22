@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { collectExternalReferences } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',

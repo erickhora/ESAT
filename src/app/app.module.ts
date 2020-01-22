@@ -13,6 +13,7 @@ import { SidenavComponent } from './home/sidenav/sidenav.component';
 import { HeaderComponent } from './home/header/header.component';
 import { FeatureComponent } from './home/feature/feature.component';
 import { CreateProjectComponent } from './home/sidenav/create-project/create-project.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CreateProjectComponent } from './home/sidenav/create-project/create-pro
     SidenavComponent,
     HeaderComponent,
     FeatureComponent,
-    CreateProjectComponent
+    CreateProjectComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
