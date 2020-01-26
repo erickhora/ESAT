@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Projeto } from 'src/app/models/projeto.model';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,16 +7,17 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
+
   criado = false;
   isCollapsed = false;
+  // public projetos = {
+  //     nome: 'Casa',
+  //     descricao: 'Era uma casa muito engracada',
+  //     valorTotalDisponivel: 100000,
+  //     tabelaItens: 'url-para-a-tabela-de-itens'
+  //   };
 
-  constructor(private modalService: NgbModal) {}
+  constructor() {}
 
   ngOnInit() {}
-
-  openCreateNewProject(content) {
-    this.modalService.open(content, {
-      centered: true
-    });
-  }
 }

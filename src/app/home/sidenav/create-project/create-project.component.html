@@ -1,34 +1,55 @@
-<!-- FORM DE CADASTRO DE PROJETO -->
-<form [formGroup]="createProjectForm" (ngSubmit)="onSubmit()" *ngIf="!cadastroPreenchido && !downloadTabelaFeito">
-  <div class="form-group">
-    NOME DO PROJETO: <input type="text" class="form-control" id="project-name" formControlName="name" required>
-    DESCRIÇÃO: <textarea class="form-control" name="description" id="project-description" cols="30" rows="10" formControlName="description"></textarea>
-    <div class="input-group mt-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">R$</span>
+<button class="btn btn-outline-success base-item" (click)="openCreateNewProject(content)">Criar Novo</button>
+
+<ng-template #content let-modal>
+
+  <div class="modal-header">
+    <h4 class="modal-title">NOVO PROJETO</h4>
+  </div>
+
+  <!-- FORM DE CADASTRO DE PROJETO -->
+  <form [formGroup]="createProjectForm" (ngSubmit)="onCreateProject()">
+    <div class="modal-body">
+      <div class="form-group">
+        <div  *ngIf="!cadastroPreenchido && !downloadTabelaFeito">
+          NOME DO PROJETO: <input type="text" class="form-control" id="project-name" formControlName="name" required>
+          DESCRIÇÃO: <textarea class="form-control" name="description" id="project-description" cols="30" rows="10" formControlName="description"></textarea>
+          <div class="input-group mt-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">R$</span>
+            </div>
+            <input type="number" class="form-control" placeholder="00,00" aria-label="Limite" id="project-limit" formControlName="limit" required>
+          </div>
+          <small>Valor total disponível</small>
+          <hr>
+          <div class="d-flex justify-content-around mt-4">
+            <button class="btn btn-outline-secondary" type="button" (click)="modal.dismiss()">CANCELAR</button>
+            <button class="btn btn-dark" type="button" (click)="cadastroPreenchido = true">PRÓXIMO</button>
+          </div>
+        </div>
+        <!-- DOWNLOAD TABELA DE ITENS -->
+        <div *ngIf="cadastroPreenchido && !downloadTabelaFeito">
+          <p style="text-align: center;">BAIXE NOSSA TABELA DE ITENS:</p>
+          <button class="btn btn-outline-secondary btn-block">BAIXAR TABELA</button>
+          <hr>
+          <div class="d-flex justify-content-around mt-4">
+            <button class="btn btn-outline-secondary" type="button" (click)="modal.dismiss(); cadastroPreenchido = false; downloadTabelaFeito = false;">CANCELAR</button>
+            <button class="btn btn-dark" (click)="downloadTabelaFeito = true">CONCLUÍDO</button>
+          </div>
+        </div>
+
+
+        <!-- UPLOAD TABELA DE ITENS -->
+        <div *ngIf="cadastroPreenchido && downloadTabelaFeito">
+          <p style="text-align: center;">FAÇA UPLOAD DA TABELA DE ITENS:</p>
+          <input type="file" class="form-control" name="table" id="table" formControlName="table">
+          <hr>
+          <div class="d-flex justify-content-around mt-4">
+            <button class="btn btn-outline-secondary" type="button" (click)="modal.dismiss(); cadastroPreenchido = false; downloadTabelaFeito = false;">CANCELAR</button>
+            <button class="btn btn-dark" type="submit" (click)="cadastroPreenchido = false; downloadTabelaFeito = false; onCreateProject(); modal.dismiss();">CONCLUÍDO</button>
+          </div>
+        </div>
+
       </div>
-      <input type="number" class="form-control" placeholder="00,00" aria-label="Limite" id="project-limit" formControlName="limit" required>
     </div>
-    <small>Valor total disponível</small>
-    <button class="btn btn-dark btn-modal" type="submit" (click)="onSubmit(); cadastroPreenchido = true">PRÓXIMO</button>
-  </div>
-</form>
-
-<!-- DOWNLOAD TABELA DE ITENS -->
-<div *ngIf="cadastroPreenchido && !downloadTabelaFeito">
-  <p style="text-align: center;">BAIXE NOSSA TABELA DE ITENS:</p>
-  <button class="btn btn-outline-secondary btn-block">BAIXAR TABELA</button>
-  <div class="d-flex justify-content-around mt-4">
-    <button class="btn btn-dark btn-modal" (click)="downloadTabelaFeito = true">CONCLUÍDO</button>
-  </div>
-</div>
-
-
-<!-- UPLOAD TABELA DE ITENS -->
-<div *ngIf="cadastroPreenchido && downloadTabelaFeito">
-  <p style="text-align: center;">FAÇA UPLOAD DA TABELA DE ITENS:</p>
-  <input type="file" name="table" id="table">
-  <div class="d-flex justify-content-around mt-4">
-    <button class="btn btn-dark btn-modal" (click)="cadastroPreenchido = false; downloadTabelaFeito = false;">CONCLUÍDO</button>
-  </div>
-</div>
+  </form>
+</ng-template>

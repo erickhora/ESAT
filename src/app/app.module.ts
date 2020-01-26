@@ -36,6 +36,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ],
+  entryComponents: [ CreateProjectComponent ]
 })
 export class AppModule { }

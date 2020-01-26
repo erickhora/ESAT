@@ -1,23 +1,13 @@
 <div id="sidenav d-flex justify-content-center">
-  <img class="base-item" src="../../../assets/images/Logo_ESAT[FundoBranco].png" alt="Logo ESAT" height="150" width="150">
+  <img class="text-center" src="../../../assets/images/Logo_ESAT[FundoBranco].png" alt="Logo ESAT" height="150" width="150">
   <p class="text-center">GERAL</p>
-  <button class="btn btn-outline-success base-item">Resumo</button>
+  <button class="btn btn-outline-success sidenav-item">Resumo</button>
   <p class="text-center mt-3">Projetos</p>
 
   <!-- CRIAR NOVO -->
-  <button class="btn btn-outline-success base-item" (click)="openCreateNewProject(content)">Criar Novo</button>
-
-  <ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title">NOVO PROJETO</h4>
-    </div>
-    <div class="modal-body">
-      <app-create-project></app-create-project>
-      <button class="btn btn-outline-secondary" type="button" (click)="modal.dismiss()">CANCELAR</button>
-    </div>
-  </ng-template>
-
-
+  <div class="text-center">
+    <app-create-project></app-create-project>
+  </div>
   <!-- PROJETOS CRIADOS -->
   <div *ngIf="criado">
     <p>
