@@ -17,11 +17,11 @@
           {{ projeto.nome }}
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <a href="">RESUMO</a>
+      <a routerLink="/resumo/{{ projeto.id }}">RESUMO</a>
       <br>
-      <a href="">TABELAS</a>
+      <a routerLink="/tabelas/{{ projeto.id }}">TABELAS</a>
       <br>
-      <a href="">REQQUISIÇÕES</a>
+      <a routerLink="/requisicoes/{{ projeto.id }}">REQUISIÇÕES</a>
     </mat-expansion-panel>
   </div>
 </div>

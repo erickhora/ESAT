@@ -17,6 +17,9 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatTreeModule, MatIconModule, MatExpansionModule  } from '@angular/material';
+import { ResumoComponent } from './home/feature/resumo/resumo.component';
+import { TabelasComponent } from './home/feature/tabelas/tabelas.component';
+import { RequisicoesComponent } from './home/feature/requisicoes/requisicoes.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { MatButtonModule, MatTreeModule, MatIconModule, MatExpansionModule  } fr
     HeaderComponent,
     FeatureComponent,
     CreateProjectComponent,
-    CadastroComponent
+    CadastroComponent,
+    ResumoComponent,
+    TabelasComponent,
+    RequisicoesComponent,
   ],
   imports: [
     BrowserModule,

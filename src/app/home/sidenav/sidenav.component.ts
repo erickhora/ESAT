@@ -46,6 +46,8 @@ export class SidenavComponent implements OnInit {
       limite: projetoCriado.limite,
       tabelaItens: projetoCriado.tabelaItens
     };
+    console.log(`o objeto eh esse: id: ${this.projeto.id}, nome: ${this.projeto.nome}, descricao: ${this.projeto.descricao},
+    limite: ${this.projeto.limite}, url da tabela: ${this.projeto.tabelaItens}`);
     this.projetos.push(this.projeto);
     this.criado = true;
   }

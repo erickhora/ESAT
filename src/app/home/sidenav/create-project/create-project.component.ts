@@ -55,10 +55,10 @@ export class CreateProjectComponent implements OnInit {
     console.log(this.projetoForm);
     this.dadosInseridos.emit({
       id: '',
-      nome: this.nome,
-      descricao: this.descricao,
-      limite: this.limite,
-      tabelaItens: this.tabelaItens
+      nome: this.projetoForm.value.nome,
+      descricao: this.projetoForm.value.descricao,
+      limite: this.projetoForm.value.limite,
+      tabelaItens: ''
     });
   }
 }
