@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Projeto } from '../../../models/projeto.model';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -10,21 +10,26 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CreateProjectComponent implements OnInit {
 
-  createProjectForm: FormGroup;
+  projetoForm: FormGroup;
   cadastroPreenchido = false;
   downloadTabelaFeito = false;
   closeResult: string;
-  @Input() public projetos;
-  @Output() dadosInseridos: EventEmitter<any> = new EventEmitter();
+
+  nome: string;
+  descricao: string;
+  limite: number;
+  tabelaItens: string;
+
+  @Output() dadosInseridos: EventEmitter<Projeto> = new EventEmitter();
 
   constructor( private modalService: NgbModal, private fb: FormBuilder ) { }
 
   ngOnInit() {
-    this.createProjectForm = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
-      description: new FormControl(null, [Validators.required]),
-      limit: new FormControl(null, [Validators.required]),
-      table: new FormControl(null, [Validators.required])
+    this.projetoForm = this.fb.group({
+      nome: [this.nome, [Validators.required]],
+      descricao: [this.descricao, [Validators.required]],
+      limite: [this.limite, [Validators.required]],
+      tabela: [this.tabelaItens, [Validators.required]]
     });
   }
 
@@ -47,6 +52,13 @@ export class CreateProjectComponent implements OnInit {
   }
 
   onCreateProject() {
-    console.log(this.createProjectForm);
+    console.log(this.projetoForm);
+    this.dadosInseridos.emit({
+      id: '',
+      nome: this.nome,
+      descricao: this.descricao,
+      limite: this.limite,
+      tabelaItens: this.tabelaItens
+    });
   }
 }

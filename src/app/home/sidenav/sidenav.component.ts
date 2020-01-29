@@ -7,17 +7,46 @@ import { Projeto } from 'src/app/models/projeto.model';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-
-  criado = false;
-  isCollapsed = false;
-  // public projetos = {
-  //     nome: 'Casa',
-  //     descricao: 'Era uma casa muito engracada',
-  //     valorTotalDisponivel: 100000,
-  //     tabelaItens: 'url-para-a-tabela-de-itens'
-  //   };
+  criado = true;
+  isCollapsed = true;
+  projeto: Projeto;
+  projetos: Projeto[] = [
+    {
+      id: '1',
+      nome: 'CASA',
+      descricao: 'MUITO ENGRACADA',
+      limite: 3000000,
+      tabelaItens: ''
+    },
+    {
+      id: '2',
+      nome: 'PREDIO',
+      descricao: 'MUITO ALTO',
+      limite: 4000000,
+      tabelaItens: ''
+    },
+    {
+      id: '3',
+      nome: 'CONDOMINIO',
+      descricao: 'MUITO BOM',
+      limite: 5000000,
+      tabelaItens: ''
+    }
+  ];
 
   constructor() {}
 
   ngOnInit() {}
+
+  getDados(projetoCriado) {
+    this.projeto = {
+      id: projetoCriado.id,
+      nome: projetoCriado.nome,
+      descricao: projetoCriado.descricao,
+      limite: projetoCriado.limite,
+      tabelaItens: projetoCriado.tabelaItens
+    };
+    this.projetos.push(this.projeto);
+    this.criado = true;
+  }
 }

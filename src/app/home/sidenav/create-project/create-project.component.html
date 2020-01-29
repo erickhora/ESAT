@@ -7,17 +7,17 @@
   </div>
 
   <!-- FORM DE CADASTRO DE PROJETO -->
-  <form [formGroup]="createProjectForm" (ngSubmit)="onCreateProject()">
+  <form [formGroup]="projetoForm" (ngSubmit)="onCreateProject()">
     <div class="modal-body">
       <div class="form-group">
         <div  *ngIf="!cadastroPreenchido && !downloadTabelaFeito">
-          NOME DO PROJETO: <input type="text" class="form-control" id="project-name" formControlName="name" required>
-          DESCRIÇÃO: <textarea class="form-control" name="description" id="project-description" cols="30" rows="10" formControlName="description"></textarea>
+          NOME DO PROJETO: <input type="text" class="form-control" id="projeto-nome" formControlName="nome" required>
+          DESCRIÇÃO: <textarea class="form-control" name="descricao" id="projeto-descricao" cols="30" rows="10" formControlName="descricao"></textarea>
           <div class="input-group mt-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">R$</span>
             </div>
-            <input type="number" class="form-control" placeholder="00,00" aria-label="Limite" id="project-limit" formControlName="limit" required>
+            <input type="number" class="form-control" placeholder="0,00" aria-label="Limite" id="projeto-limite" formControlName="limite" required>
           </div>
           <small>Valor total disponível</small>
           <hr>
@@ -41,7 +41,7 @@
         <!-- UPLOAD TABELA DE ITENS -->
         <div *ngIf="cadastroPreenchido && downloadTabelaFeito">
           <p style="text-align: center;">FAÇA UPLOAD DA TABELA DE ITENS:</p>
-          <input type="file" class="form-control" name="table" id="table" formControlName="table">
+          <input type="file" class="form-control" name="tabela" id="tabela" formControlName="tabela">
           <hr>
           <div class="d-flex justify-content-around mt-4">
             <button class="btn btn-outline-secondary" type="button" (click)="modal.dismiss(); cadastroPreenchido = false; downloadTabelaFeito = false;">CANCELAR</button>

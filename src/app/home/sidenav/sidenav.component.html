@@ -6,21 +6,22 @@
 
   <!-- CRIAR NOVO -->
   <div class="text-center">
-    <app-create-project></app-create-project>
+    <app-create-project (dadosInseridos)="getDados($event)"></app-create-project>
   </div>
+
   <!-- PROJETOS CRIADOS -->
-  <div *ngIf="criado">
-    <p>
-      <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-              [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-        Toggle
-      </button>
-    </p>
-    <div id="collapseExample" [ngbCollapse]="isCollapsed">
-      <div class="card">
-        <div class="card-body">
-          You can collapse this card by clicking Toggle
-        </div>
-      </div>
-    </div>
+  <div *ngIf="criado" class="mt-2">
+    <mat-expansion-panel *ngFor="let projeto of projetos">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ projeto.nome }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a href="">RESUMO</a>
+      <br>
+      <a href="">TABELAS</a>
+      <br>
+      <a href="">REQQUISIÇÕES</a>
+    </mat-expansion-panel>
   </div>
+</div>

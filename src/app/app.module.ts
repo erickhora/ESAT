@@ -15,6 +15,9 @@ import { FeatureComponent } from './home/feature/feature.component';
 import { CreateProjectComponent } from './home/sidenav/create-project/create-project.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatTreeModule, MatIconModule, MatExpansionModule  } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,12 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTreeModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [ AppComponent ],

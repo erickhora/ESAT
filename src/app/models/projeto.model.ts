@@ -1,6 +1,7 @@
 export interface Projeto {
+  id: string;
   nome: string;
   descricao: string;
-  valorTotalDisponivel: number;
+  limite: number;
   tabelaItens: string;
 }
