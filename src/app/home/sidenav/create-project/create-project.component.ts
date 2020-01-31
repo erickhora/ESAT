@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Projeto } from '../../../models/projeto.model';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-project',
@@ -22,7 +23,7 @@ export class CreateProjectComponent implements OnInit {
 
   @Output() dadosInseridos: EventEmitter<Projeto> = new EventEmitter();
 
-  constructor( private modalService: NgbModal, private fb: FormBuilder ) { }
+  constructor( private modalService: NgbModal, private fb: FormBuilder, private http: HttpClient ) { }
 
   ngOnInit() {
     this.projetoForm = this.fb.group({
@@ -52,13 +53,10 @@ export class CreateProjectComponent implements OnInit {
   }
 
   onCreateProject() {
-    console.log(this.projetoForm);
-    this.dadosInseridos.emit({
-      id: '',
-      nome: this.projetoForm.value.nome,
-      descricao: this.projetoForm.value.descricao,
-      limite: this.projetoForm.value.limite,
-      tabelaItens: ''
-    });
+    const form = JSON.stringify(this.projetoForm.value);
+    this.http.post('https://esat-4daec.firebaseio.com/projetos.json', form)
+      .subscribe((resposta) => {
+        console.log(resposta);
+      });
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Projeto } from 'src/app/models/projeto.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sidenav',
@@ -10,31 +11,9 @@ export class SidenavComponent implements OnInit {
   criado = true;
   isCollapsed = true;
   projeto: Projeto;
-  projetos: Projeto[] = [
-    {
-      id: '1',
-      nome: 'CASA',
-      descricao: 'MUITO ENGRACADA',
-      limite: 3000000,
-      tabelaItens: ''
-    },
-    {
-      id: '2',
-      nome: 'PREDIO',
-      descricao: 'MUITO ALTO',
-      limite: 4000000,
-      tabelaItens: ''
-    },
-    {
-      id: '3',
-      nome: 'CONDOMINIO',
-      descricao: 'MUITO BOM',
-      limite: 5000000,
-      tabelaItens: ''
-    }
-  ];
+  projetos: Projeto[] = [];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {}
 
@@ -46,9 +25,10 @@ export class SidenavComponent implements OnInit {
       limite: projetoCriado.limite,
       tabelaItens: projetoCriado.tabelaItens
     };
-    console.log(`o objeto eh esse: id: ${this.projeto.id}, nome: ${this.projeto.nome}, descricao: ${this.projeto.descricao},
-    limite: ${this.projeto.limite}, url da tabela: ${this.projeto.tabelaItens}`);
-    this.projetos.push(this.projeto);
+    // console.log(`o objeto eh esse: id: ${this.projeto.id}, nome: ${this.projeto.nome}, descricao: ${this.projeto.descricao},
+    // limite: ${this.projeto.limite}, url da tabela: ${this.projeto.tabelaItens}`);
+    // this.projetos.push(this.projeto);
+    // this.http.get('https://esat-4daec.firebaseio.com/projetos.json', );
     this.criado = true;
   }
 }

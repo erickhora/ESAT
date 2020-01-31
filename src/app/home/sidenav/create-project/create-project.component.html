@@ -29,11 +29,11 @@
         <!-- DOWNLOAD TABELA DE ITENS -->
         <div *ngIf="cadastroPreenchido && !downloadTabelaFeito">
           <p style="text-align: center;">BAIXE NOSSA TABELA DE ITENS:</p>
-          <button class="btn btn-outline-secondary btn-block">BAIXAR TABELA</button>
+          <button type="button" class="btn btn-outline-secondary btn-block">BAIXAR TABELA</button>
           <hr>
           <div class="d-flex justify-content-around mt-4">
             <button class="btn btn-outline-secondary" type="button" (click)="modal.dismiss(); cadastroPreenchido = false; downloadTabelaFeito = false;">CANCELAR</button>
-            <button class="btn btn-dark" (click)="downloadTabelaFeito = true">CONCLUÍDO</button>
+            <button class="btn btn-dark" type="button" (click)="downloadTabelaFeito = true">CONCLUÍDO</button>
           </div>
         </div>
 
@@ -45,7 +45,7 @@
           <hr>
           <div class="d-flex justify-content-around mt-4">
             <button class="btn btn-outline-secondary" type="button" (click)="modal.dismiss(); cadastroPreenchido = false; downloadTabelaFeito = false;">CANCELAR</button>
-            <button class="btn btn-dark" type="submit" (click)="cadastroPreenchido = false; downloadTabelaFeito = false; onCreateProject(); modal.dismiss();">CONCLUÍDO</button>
+            <button class="btn btn-dark" type="button" (click)="cadastroPreenchido = false; downloadTabelaFeito = false; onCreateProject(); modal.dismiss();">CONCLUÍDO</button>
           </div>
         </div>
 
