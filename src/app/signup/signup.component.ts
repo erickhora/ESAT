@@ -2,25 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class CadastroComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
-  cadastroForm: FormGroup;
+  signupForm: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
-    this.cadastroForm = new FormGroup({
+    this.signupForm = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
     });
   }
 
   onSubmit() {
-    console.log(this.cadastroForm);
+    console.log(this.signupForm);
   }
 
 }

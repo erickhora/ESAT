@@ -6,12 +6,12 @@
 
   <!-- CRIAR NOVO -->
   <div class="text-center">
-    <app-create-project (dadosInseridos)="getDados($event)"></app-create-project>
+    <app-create-project></app-create-project>
   </div>
 
   <!-- PROJETOS CRIADOS -->
   <div *ngIf="criado" class="mt-2">
-    <mat-expansion-panel *ngFor="let projeto of projetos">
+    <mat-expansion-panel *ngFor="let projeto of projects">
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{ projeto.nome }}

@@ -14,7 +14,7 @@ import { SidenavComponent } from './home/sidenav/sidenav.component';
 import { HeaderComponent } from './home/header/header.component';
 import { FeatureComponent } from './home/feature/feature.component';
 import { CreateProjectComponent } from './home/sidenav/create-project/create-project.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { SignupComponent } from './signup/signup.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatTreeModule, MatIconModule, MatExpansionModule  } from '@angular/material';
@@ -33,7 +33,7 @@ import { RequisicoesComponent } from './home/feature/requisicoes/requisicoes.com
     HeaderComponent,
     FeatureComponent,
     CreateProjectComponent,
-    CadastroComponent,
+    SignupComponent,
     ResumoComponent,
     TabelasComponent,
     RequisicoesComponent,

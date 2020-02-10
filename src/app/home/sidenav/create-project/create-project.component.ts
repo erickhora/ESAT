@@ -1,8 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { Projeto } from '../../../models/projeto.model';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClient } from '@angular/common/http';
+import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
   selector: 'app-create-project',
@@ -11,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CreateProjectComponent implements OnInit {
 
-  projetoForm: FormGroup;
+  projectForm: FormGroup;
   cadastroPreenchido = false;
   downloadTabelaFeito = false;
   closeResult: string;
@@ -21,12 +20,10 @@ export class CreateProjectComponent implements OnInit {
   limite: number;
   tabelaItens: string;
 
-  @Output() dadosInseridos: EventEmitter<Projeto> = new EventEmitter();
-
-  constructor( private modalService: NgbModal, private fb: FormBuilder, private http: HttpClient ) { }
+  constructor( private modalService: NgbModal, private fb: FormBuilder, private projectsService: ProjectsService ) { }
 
   ngOnInit() {
-    this.projetoForm = this.fb.group({
+    this.projectForm = this.fb.group({
       nome: [this.nome, [Validators.required]],
       descricao: [this.descricao, [Validators.required]],
       limite: [this.limite, [Validators.required]],
@@ -53,10 +50,11 @@ export class CreateProjectComponent implements OnInit {
   }
 
   onCreateProject() {
-    const form = JSON.stringify(this.projetoForm.value);
-    this.http.post('https://esat-4daec.firebaseio.com/projetos.json', form)
-      .subscribe((resposta) => {
-        console.log(resposta);
-      });
+    this.nome = this.projectForm.controls.nome.value;
+    this.descricao = this.projectForm.controls.descricao.value;
+    this.limite = this.projectForm.controls.limite.value;
+    this.tabelaItens = '';
+
+    this.projectsService.postProject(this.nome, this.descricao, this.limite, this.tabelaItens);
   }
 }

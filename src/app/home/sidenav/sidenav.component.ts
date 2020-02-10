@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Projeto } from 'src/app/models/projeto.model';
-import { HttpClient } from '@angular/common/http';
+import { Project } from 'src/app/models/project.model';
+import { ProjectsService } from 'src/app/services/projects.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -10,25 +10,18 @@ import { HttpClient } from '@angular/common/http';
 export class SidenavComponent implements OnInit {
   criado = true;
   isCollapsed = true;
-  projeto: Projeto;
-  projetos: Projeto[] = [];
+  projects: Project[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private projectsService: ProjectsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getDados();
+  }
 
-  getDados(projetoCriado) {
-    this.projeto = {
-      id: projetoCriado.id,
-      nome: projetoCriado.nome,
-      descricao: projetoCriado.descricao,
-      limite: projetoCriado.limite,
-      tabelaItens: projetoCriado.tabelaItens
-    };
-    // console.log(`o objeto eh esse: id: ${this.projeto.id}, nome: ${this.projeto.nome}, descricao: ${this.projeto.descricao},
-    // limite: ${this.projeto.limite}, url da tabela: ${this.projeto.tabelaItens}`);
-    // this.projetos.push(this.projeto);
-    // this.http.get('https://esat-4daec.firebaseio.com/projetos.json', );
+  private getDados() {
+    this.projectsService.getProjects().subscribe( projects => {
+      this.projects = projects;
+    });
     this.criado = true;
   }
 }

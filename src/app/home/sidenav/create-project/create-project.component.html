@@ -7,7 +7,7 @@
   </div>
 
   <!-- FORM DE CADASTRO DE PROJETO -->
-  <form [formGroup]="projetoForm" (ngSubmit)="onCreateProject()">
+  <form [formGroup]="projectForm" (ngSubmit)="onCreateProject()">
     <div class="modal-body">
       <div class="form-group">
         <div  *ngIf="!cadastroPreenchido && !downloadTabelaFeito">
